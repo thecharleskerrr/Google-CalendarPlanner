@@ -1,0 +1,120 @@
+; ————————————————————————————————————————————————————————————————————————————————
+; Шаблон файла Variables_URL.ini (Variables_URL.ini template file)
+; ————————————————————————————————————————————————————————————————————————————————
+; ИНСТРУКЦИЯ (INSTRUCTIONS):
+; 1. Скопируйте этот файл и переименуйте из Variables_URL.ini.example в Variables_URL.ini
+;    (Copy this file and rename to Variables_URL.ini)
+; 2. Замените URL_PLACEHOLDER на реальные URL ваших календарей
+;    (Replace URL_PLACEHOLDER with actual URLs of your calendars)
+; 3. НЕ коммитьте Variables_URL.ini в Git! (Он добавлен в .gitignore)
+;    (DO NOT commit Variables_URL.ini to Git! It's added to .gitignore)
+; ————————————————————————————————————————————————————————————————————————————————
+
+; (NB!) Формат комментариев: Коментарий по-русски (Comment in english)
+; UTF-16 LЕ with ВОМ
+
+[Variables]
+;—— Поддерживаются Google, iCloud и Yandex Календари (Supported Google, iCloud and Yandex Calendars) ———————————————
+    
+    ;—— URL календарей Google, iCloud, Yandex (Google, iCloud, Yandex Calendar URLs) ———————————————————————————————
+
+    ; ПРИМЕР GOOGLE CALENDAR (GOOGLE CALENDAR EXAMPLE):
+    ; iCalendar1=https://calendar.google.com/calendar/ical/YOUR_EMAIL/private-XXXXX/basic.ics
+    
+    ; ПРИМЕР ICLOUD CALENDAR (ICLOUD CALENDAR EXAMPLE):
+    ; iCalendar1=https://p129-caldav.icloud.com/published/2/YOUR_CALENDAR_ID
+    
+    ; ПРИМЕР YANDEX CALENDAR (YANDEX CALENDAR EXAMPLE):
+    ; iCalendar1=https://calendar.yandex.ru/export/ics.xml?private_token=YOUR_TOKEN&tz_id=YOUR_TIMEZONE
+
+    ; Календарь 1 (Calendar 1)
+    iCalendar1_name = Calendar 1
+    iCalendar1=URL_PLACEHOLDER_1
+    
+    ; Календарь 2 (Calendar 2)
+    iCalendar2_name = Calendar 2
+    iCalendar2=URL_PLACEHOLDER_2
+    
+    ; Календарь 3 (Calendar 3)
+    iCalendar3_name = Calendar 3
+    iCalendar3=URL_PLACEHOLDER_3
+    
+    ; Календарь 4 - Агрегатор (Calendar 4 - Aggregator) ————————————————————————————————————————————
+    ; Этот календарь может объединять несколько подкалендарей в один
+    ; (This calendar can combine multiple subcalendars into one)
+    iCalendar4_name = Calendar 4
+    
+    ; Подкалендари агрегатора iCalendar4 (Subcalendars of aggregator iCalendar4) ————————————————
+    ; Укажите URL подкалендарей, которые нужно объединить (Specify URLs of subcalendars to combine)
+    ; Оставьте пустым, если подкалендарь не используется (Leave empty if subcalendar is not used)
+    iCalendar4_1=URL_PLACEHOLDER_4_1
+    iCalendar4_2=URL_PLACEHOLDER_4_2
+    iCalendar4_3=URL_PLACEHOLDER_4_3
+    iCalendar4_4=
+    iCalendar4_5=
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
+    
+    ; Календарь 5 - Агрегатор (Calendar 5 - Aggregator) ————————————————————————————————————————————
+    ; Этот календарь может объединять несколько подкалендарей в один
+    ; (This calendar can combine multiple subcalendars into one)
+    iCalendar5_name = Calendar 5
+    
+    ; Подкалендари агрегатора iCalendar5 (Subcalendars of aggregator iCalendar5) ————————————————
+    ; Укажите URL подкалендарей, которые нужно объединить (Specify URLs of subcalendars to combine)
+    ; Оставьте пустым, если подкалендарь не используется (Leave empty if subcalendar is not used)
+    iCalendar5_1=URL_PLACEHOLDER_5_1
+    iCalendar5_2=URL_PLACEHOLDER_5_2
+    iCalendar5_3=URL_PLACEHOLDER_5_3
+    iCalendar5_4=
+    iCalendar5_5=
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
+
+    ; Агрегатор календарей (Aggregator of calendars) —————————————————————————————————————————————————————————————
+    iCalendar6_name = Календарь 6 (Агрегатор)
+    ; Подкалендари агрегатора iCalendar6 (Subcalendars of aggregator iCalendar6) ————————————————
+     iCalendar6_1=https://example.com/calendar1.ics
+     iCalendar6_2=https://example.com/calendar2.ics
+     iCalendar6_3=
+     iCalendar6_4=
+     iCalendar6_5=
+     iCalendar6_6=
+     iCalendar6_7=
+     iCalendar6_8=
+     iCalendar6_9=
+     iCalendar6_10=
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
+
+    
+    ; Активные календари (Active calendars)—————————————————————————————————————————————————————————
+    ; Выберите, какие календари использовать (Choose which calendars to use):
+    ; Варианты (Options): 
+    ; - Все календари (All calendars): ActiveFeeds=MeasureFeed1|MeasureFeed2|MeasureFeed3|MeasureFeed4|MeasureFeed5
+    ; - Первые три (First three): ActiveFeeds=MeasureFeed1|MeasureFeed2|MeasureFeed3
+    ; - Только первый (Only first): ActiveFeeds=MeasureFeed1
+    
+    ActiveFeeds=MeasureFeed1|MeasureFeed2|MeasureFeed3
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
+
+; ————————————————————————————————————————————————————————————————————————————————
+; КАК ПОЛУЧИТЬ URL КАЛЕНДАРЯ (HOW TO GET CALENDAR URL):
+; ————————————————————————————————————————————————————————————————————————————————
+; 
+; GOOGLE CALENDAR:
+; 1. Откройте Google Calendar (https://calendar.google.com)
+; 2. Нажмите на настройки календаря (три точки возле нужного календаря)
+; 3. Выберите "Настройки и совместный доступ"
+; 4. Прокрутите до раздела "Интеграция календаря"
+; 5. Скопируйте "Секретный адрес в формате iCal"
+;
+; ICLOUD CALENDAR:
+; 1. Откройте iCloud Calendar (https://www.icloud.com/calendar)
+; 2. Нажмите на иконку "Поделиться" возле нужного календаря
+; 3. Включите "Публичный календарь"
+; 4. Скопируйте URL календаря
+;
+; YANDEX CALENDAR:
+; 1. Откройте Яндекс.Календарь (https://calendar.yandex.ru)
+; 2. Нажмите на настройки календаря
+; 3. Выберите "Экспорт календаря"
+; 4. Скопируйте приватную ссылку
+; ————————————————————————————————————————————————————————————————————————————————
